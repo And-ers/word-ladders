@@ -1,7 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import enchant
-import twl
+import wordladders.twl as twl
 import itertools
 import os.path
 
@@ -21,6 +21,7 @@ def generateWordGraph(dic, letters):
             all_words = [''.join(word) for word in itertools.product('abcdefghijklmnopqrstuvwxyz', repeat=letters) if twl.check(''.join(word))]
         else:
             d = enchant.Dict(dic)
+            all_words = [''.join(word) for word in itertools.product('abcdefghijklmnopqrstuvwxyz', repeat=letters) if d.check(''.join(word))]
         G = nx.Graph()
         G.add_nodes_from(all_words)
         for node1 in G:

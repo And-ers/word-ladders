@@ -34,6 +34,6 @@ def generateWordGraph(dic, letters):
 word_graph = generateWordGraph('twl', 4)
 
 print( 'Number of connected components: ' + str(nx.number_connected_components(word_graph)) + '\n' \
-       'Length of longest path: ' + str(max([nx.diameter(subgraph) for subgraph in nx.connected_component_subgraphs(word_graph)])) )
+       'Length of longest path: ' + str(max([nx.diameter(word_graph.subgraph(nodes)) for nodes in nx.connected_components(word_graph)])) )
 nx.draw_networkx(word_graph, pos = nx.kamada_kawai_layout(word_graph), with_labels = True, node_size = 5, font_size = 3, width = 0.5)
 plt.show()

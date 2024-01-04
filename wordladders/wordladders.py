@@ -1,7 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import enchant
-import wordladders.twl as twl
+import twl
 import itertools
 import os.path
 

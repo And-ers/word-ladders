@@ -1,4 +1,5 @@
 import networkx as nx
+import matplotlib.pyplot as plt
 import enchant
 import itertools
 
@@ -24,3 +25,4 @@ for node1 in G:
 
 print(nx.number_connected_components(G))
 nx.draw(G)
+plt.show()
